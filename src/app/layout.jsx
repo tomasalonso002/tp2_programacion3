@@ -1,5 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/app/components/Navbar";
+import Footer from "@/app/components/Footer";
+import { CartProvider } from "@/app/context/CartContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,19 +15,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "PlayStation Games Library",
-  description: "Explora y descubre los mejores juegos de PlayStation",
-  keywords: "playstation, games, gaming, ps4, ps5, playstation games",
+  title: "PS Game Store",
+  description: "Tienda de videojuegos de PlayStation",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-gradient-to-b from-gray-900 to-gray-800">
-        {children}
+    <html lang="es" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="min-h-screen flex flex-col">
+        <CartProvider>
+          <Navbar />
+          <main className="flex-grow container mx-auto p-6">
+            {children}
+          </main>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

@@ -13,7 +13,7 @@ const rawgApi = axios.create({
 export const PLAYSTATION_PLATFORMS = {
   PS1: 1,
   PS2: 8,
-  PS3: 8, // Nota: PS2 y PS3 comparten ID en RAWG
+  PS3: 8,
   PS4: 18,
   PS5: 187,
   PSP: 19,
@@ -27,7 +27,7 @@ export const getGamesByPlatform = async (platformId, page = 1, pageSize = 20) =>
         platforms: platformId,
         page,
         page_size: pageSize,
-        ordering: "-rating", // Ordenar por rating descendente
+        ordering: "-rating",
       },
     });
     return response.data;
