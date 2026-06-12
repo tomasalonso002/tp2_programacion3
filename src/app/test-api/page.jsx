@@ -29,15 +29,15 @@ export default function TestAPI() {
   if (loading) return <div className="p-8">Probando conexión...</div>;
   if (error) return <div className="p-8 text-red-500">Error: {error}</div>;
 
-  return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold mb-4">✅ Conexión exitosa!</h1>
-      <p className="mb-4">Se encontraron {games.length} juegos:</p>
-      <ul className="list-disc pl-5">
-        {games.map((game) => (
-          <li key={game.id}>{game.name} (⭐ {game.rating})</li>
-        ))}
-      </ul>
-    </div>
-  );
+    return (
+      <div className="p-8">
+        <h1 className="text-2xl font-bold mb-4">✅ Conexión exitosa!</h1>
+        <p className="mb-4">Se encontraron {games.length} juegos:</p>
+        <ul className="list-disc pl-5">
+          {games.map((game) => (
+            <li key={game.id}>{game.name} (⭐ {game.rating})</li>
+          ))}
+        </ul>
+      </div>
+    );
 }

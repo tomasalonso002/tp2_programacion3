@@ -19,7 +19,6 @@ export default function Home() {
   const fetchGames = async (search = "") => {
     setLoading(true);
     try {
-      // ✅ Usar IDs numéricos de PlayStation (18=PS4, 187=PS5)
       let url = `https://api.rawg.io/api/games?key=${API_KEY}&platforms=18,187`;
       if (search) {
         url = `https://api.rawg.io/api/games?key=${API_KEY}&search=${search}&platforms=18,187`;
@@ -43,7 +42,6 @@ export default function Home() {
 
   const fetchGameDetails = async (id) => {
     try {
-      // ✅ Usar la API key aquí también
       const response = await fetch(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`);
       const data = await response.json();
       setSelectedGame(data);
