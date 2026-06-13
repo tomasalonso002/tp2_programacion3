@@ -10,7 +10,7 @@ export function CartProvider({ children }) {
 
   useEffect(() => {
     setIsMounted(true);
-    const storedCart = localStorage.getItem("ps_cart");
+    const storedCart = localStorage.getItem("carrito_ps");
     if (storedCart) {
       setCart(JSON.parse(storedCart));
     }
@@ -18,40 +18,24 @@ export function CartProvider({ children }) {
 
   useEffect(() => {
     if (isMounted) {
-      localStorage.setItem("ps_cart", JSON.stringify(cart));
+      localStorage.setItem("carrito_ps", JSON.stringify(cart));
     }
   }, [cart, isMounted]);
 
   const addToCart = (game) => {
-    const exists = cart.some((item) => item.id === game.id);
+  const exists = cart.some((item) => item.id === game.id);
     if (!exists) {
-      setCart([...cart, { ...game, quantity: 1 }]);
+      setCart([...cart, { ...game, cantidad: 1 }]);
     } else {
-      setCart(
-        cart.map((item) =>
-          item.id === game.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        )
-      );
+      alert("Este juego ya fue agregado al carrito");
     }
   };
+
 
   const removeFromCart = (id) => {
     setCart(cart.filter((item) => item.id !== id));
   };
 
-  const updateQuantity = (id, quantity) => {
-    if (quantity <= 0) {
-      removeFromCart(id);
-    } else {
-      setCart(
-        cart.map((item) =>
-          item.id === id ? { ...item, quantity } : item
-        )
-      );
-    }
-  };
 
   if (!isMounted) return null;
 
@@ -61,7 +45,6 @@ export function CartProvider({ children }) {
         cart,
         addToCart,
         removeFromCart,
-        updateQuantity,
         cartCount: cart.length,
       }}
     >

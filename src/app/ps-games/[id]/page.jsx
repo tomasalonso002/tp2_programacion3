@@ -73,6 +73,7 @@ export default async function GameDetail({ params }) {
         </div>
 
       </div>
+      
 
     </section>
   );

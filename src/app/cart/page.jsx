@@ -87,49 +87,7 @@ export default function CartPage() {
 
               </div>
 
-              <div className="flex items-center gap-2">
-
-                <button
-                  onClick={() =>
-                    updateQuantity(
-                      game.id,
-                      game.quantity - 1
-                    )
-                  }
-                  className="
-                    px-3
-                    py-1
-                    bg-gray-300
-                    rounded
-                  "
-                >
-                  -
-                </button>
-
-                <span>
-                  {game.quantity}
-                </span>
-
-                <button
-                  onClick={() =>
-                    updateQuantity(
-                      game.id,
-                      game.quantity + 1
-                    )
-                  }
-                  className="
-                    px-3
-                    py-1
-                    bg-gray-300
-                    rounded
-                  "
-                >
-                  +
-                </button>
-
-              </div>
-
-              <button
+               <button
                 onClick={() =>
                   removeFromCart(game.id)
                 }
