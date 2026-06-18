@@ -34,6 +34,7 @@ export default function CartView({ game }) {
       </Link>
 
       <div className="p-4">
+
         <h3 className="font-bold text-lg">
           {game.name}
         </h3>
@@ -51,7 +52,7 @@ export default function CartView({ game }) {
               hover:bg-blue-700
             "
           >
-            Agregar al carrito
+            ⭐ Agregar a Favoritos
           </button>
 
           <Link
@@ -64,10 +65,11 @@ export default function CartView({ game }) {
               rounded
             "
           >
-            Ver carrito ({cart.length})
+            Ver favoritos ({cart.length})
           </Link>
 
         </div>
+
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ export function CartProvider({ children }) {
     if (!exists) {
       setCart([...cart, { ...game, cantidad: 1 }]);
     } else {
-      alert("Este juego ya fue agregado al carrito");
+      alert("Este juego ya fue agregado a favoritos");
     }
   };
 
@@ -56,7 +56,7 @@ export function CartProvider({ children }) {
 export function useCart() {
   const context = useContext(CartContext);
   if (!context) {
-    throw new Error("useCart must be used within a CartProvider");
+    throw new Error("useCart debe usarse dentro de CartProvider");
   }
   return context;
 }

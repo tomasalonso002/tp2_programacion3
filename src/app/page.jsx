@@ -34,7 +34,7 @@ export default function Home() {
 
           <div className="border-t border-gray-700/60 pt-6">
             <p className="text-gray-400 text-sm sm:text-base italic">
-              💡 Nota de uso: A través de las opciones de navegación, podrás ver las fichas técnicas y utilizar la función de agregar al carrito la cual solo tiene la funcion de eliminar. 
+              💡 Nota de uso: A través de las opciones de navegación, podrás ver las fichas técnicas y utilizar la función de agregar a favoritos la cual solo tiene la funcion de eliminar. 
             </p>
           </div>
         </div>

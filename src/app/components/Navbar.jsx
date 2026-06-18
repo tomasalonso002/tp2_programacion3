@@ -18,7 +18,7 @@ export default function Navbar() {
             Juegos
           </Link>
           <Link href="/cart" className="hover:text-gray-300 relative">
-            🛒 Carrito
+            🛒 Favoritos
             {cartCount > 0 && (  // ← Mostrar contador
               <span className="absolute -top-2 -right-4 bg-red-500 text-white rounded-full px-2 py-0.5 text-xs">
                 {cartCount}
