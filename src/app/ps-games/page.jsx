@@ -69,7 +69,7 @@ export default function PlayStationGames() {
         <button
           onClick={() => setPage((p) => Math.max(1, p - 1))}
           disabled={page === 1}
-          className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
+          className="px-4 py-2 rounded disabled:opacity-50 cursor-pointer"
         >
           Anterior
         </button>
@@ -79,7 +79,7 @@ export default function PlayStationGames() {
         <button
           onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
           disabled={page === totalPages}
-          className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
+          className="px-4 py-2 b rounded disabled:opacity-50 cursor-pointer"
         >
           Siguiente
         </button>
