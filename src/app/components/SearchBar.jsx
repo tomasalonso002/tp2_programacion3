@@ -19,7 +19,7 @@ export default function SearchBar({ onSearch }) {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Buscar juegos... (Ej: God of War, Spider-Man)"
-        className="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="border border-gray-300 rounded-lg p-2 w-100"
       />
       <button
         type="submit"
