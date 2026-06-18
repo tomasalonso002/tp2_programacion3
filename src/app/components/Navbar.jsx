@@ -17,6 +17,9 @@ export default function Navbar() {
           <Link href="/ps-games" className="hover:text-gray-300">
             Juegos
           </Link>
+          <Link href="/about" className="hover:text-gray-300">
+            About
+          </Link>
           <Link href="/cart" className="hover:text-gray-300 relative">
             🛒 Favoritos
             {cartCount > 0 && (  // ← Mostrar contador

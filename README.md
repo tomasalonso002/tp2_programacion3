@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My PlayStation Games
 
-## Getting Started
+Aplicación desarrollada por TOMAS ALONSO ARIAS Y MAXIMILIANO LOPEZ, con Next.js para explorar videojuegos utilizando una API externa (RAWG API) y administrar una lista de favoritos.
 
-First, run the development server:
+
+## Descripción
+
+Este proyecto permite consultar información de videojuegos de PlayStation consumiendo una API externa, visualizar detalles individuales y administrar una lista de favoritos persistida localmente.
+
+La aplicación aplica conceptos de:
+
+* Rutas y navegación en Next.js
+* Componentes reutilizables
+* Server Components y Client Components
+* Context API
+* Persistencia con Local Storage
+* Consumo de APIs externas
+
+---
+
+## Funcionalidades
+
+* Visualizar catálogo de juegos.
+* Buscar juegos por nombre.
+* Acceder al detalle de cada juego.
+* Ver imagen, descripción y datos del juego.
+* Agregar juegos a favoritos.
+* Eliminar juegos de favoritos.
+* Persistencia de favoritos utilizando Local Storage.
+
+---
+
+## Tecnologías utilizadas
+
+* Next.js
+* React
+* JavaScript
+* Tailwind CSS
+* RAWG API
+
+---
+
+## Estructura del proyecto
+
+```text
+src/app
+├── about
+├── cart
+├── components
+├── context
+├── ps-games
+│   └── [id]
+├── services
+├── test-api
+├── layout.jsx
+└── page.jsx
+```
+
+---
+
+## Instalación
+
+Clonar el repositorio:
+
+```bash
+git clone <https://github.com/tomasalonso002/tp2_programacion3.git>
+```
+
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+Ejecutar en desarrollo:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Rutas principales
 
-To learn more about Next.js, take a look at the following resources:
+| Ruta             | Descripción              |
+| ---------------- | ------------------------ |
+| `/`              | Página principal         |
+| `/ps-games`      | Catálogo de juegos       |
+| `/ps-games/[id]` | Detalle del juego        |
+| `/cart`          | Lista de favoritos       |
+| `/about`         | Información del proyecto |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Estado Global
 
-## Deploy on Vercel
+La aplicación utiliza Context API para compartir el estado de favoritos entre componentes.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Persistencia
+
+Los favoritos se almacenan utilizando Local Storage para mantener la información luego de recargar la página.
