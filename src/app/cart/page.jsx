@@ -22,7 +22,7 @@ export default function CartPage() {
         <div>
 
           <p className="mb-4">
-            No hay juegos en el carrito.
+            No hay juegos seleccionados favoritos.
           </p>
 
           <Link
