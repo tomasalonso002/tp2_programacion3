@@ -2,13 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCart } from "../context/CartContext";
+import FavoriteButton from "./FavoriteButton";
 
 export default function GameCard({ game }) {
-  const { addToCart } = useCart();
-
   return (
     <div className="border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+
       <Link href={`/ps-games/${game.id}`}>
         <div className="relative h-48 w-full">
           <Image
@@ -19,31 +18,32 @@ export default function GameCard({ game }) {
           />
         </div>
       </Link>
-      
+
       <div className="p-4">
+
         <Link href={`/ps-games/${game.id}`}>
           <h3 className="font-bold text-lg mb-2 hover:text-blue-600 transition-colors">
             {game.name}
           </h3>
         </Link>
-        
+
         <div className="flex items-center justify-between mb-3">
+
           <div className="flex items-center gap-1">
             <span className="text-yellow-500">★</span>
             <span>{game.rating?.toFixed(1) || "N/A"}</span>
           </div>
+
           <span className="text-sm text-gray-600">
             {game.released?.split("-")[0] || "Próximamente"}
           </span>
+
         </div>
-        
-        <button
-          onClick={() => addToCart(game)}
-          className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"
-        >
-          Agregar a Carrito
-        </button>
+
+        <FavoriteButton game={game} />
+
       </div>
+
     </div>
   );
 }

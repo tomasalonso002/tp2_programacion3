@@ -1,4 +1,5 @@
 import { getGameDetails } from "@/app/services/rawgApi";
+import FavoriteButton from "@/app/components/FavoriteButton";
 
 export default async function GameDetail({ params }) {
   const { id } = await params;
@@ -24,7 +25,6 @@ export default async function GameDetail({ params }) {
 
       <div className="grid md:grid-cols-2 gap-8 mt-6">
 
-        {/* Imagen */}
         <div>
           {game.background_image ? (
             <img
@@ -39,7 +39,6 @@ export default async function GameDetail({ params }) {
           )}
         </div>
 
-        {/* Información */}
         <div>
 
           <h2 className="text-2xl font-semibold mb-3">
@@ -70,10 +69,13 @@ export default async function GameDetail({ params }) {
 
           </div>
 
+          <div className="mt-6">
+            <FavoriteButton game={game} />
+          </div>
+
         </div>
 
       </div>
-      
 
     </section>
   );
