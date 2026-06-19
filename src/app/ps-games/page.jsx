@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getPlayStationGames, searchGames } from "../services/rawgApi";
+import { obtenerJuegosPlayStation, buscarJuegos } from "../services/rawgApi";
 import GameCard from "../components/GameCard";
 import SearchBar from "../components/SearchBar";
 
@@ -21,9 +21,9 @@ export default function PlayStationGames() {
     try {
       let data;
       if (searchQuery) {
-        data = await searchGames(searchQuery, page);
+        data = await buscarJuegos(searchQuery, page);
       } else {
-        data = await getPlayStationGames(page);
+        data = await obtenerJuegosPlayStation(page);
       }
       setGames(data.results || []);
       setTotalPages(Math.ceil(data.count / 20));

@@ -45,7 +45,7 @@ La aplicación aplica conceptos de:
 ```text
 src/app
 ├── about
-├── cart
+├── Favorite
 ├── components
 ├── context
 ├── ps-games
@@ -93,7 +93,7 @@ http://localhost:3000
 | `/`              | Página principal         |
 | `/ps-games`      | Catálogo de juegos       |
 | `/ps-games/[id]` | Detalle del juego        |
-| `/cart`          | Lista de favoritos       |
+| `/Favorite`          | Lista de favoritos       |
 | `/about`         | Información del proyecto |
 
 ---

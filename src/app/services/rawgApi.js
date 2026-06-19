@@ -9,7 +9,7 @@ const rawgApi = axios.create({
   },
 });
 
-export const PLAYSTATION_PLATFORMS = {
+export const PLATAFORMA_PS = {
   PS1: 1,
   PS2: 8,
   PS3: 16,
@@ -19,7 +19,7 @@ export const PLAYSTATION_PLATFORMS = {
   PS_VITA: 21,
 };
 
-async function fetchGames(params) {
+async function traerJuegos(params) {
   const response = await rawgApi.get("/games", {
     params,
   });
@@ -27,11 +27,11 @@ async function fetchGames(params) {
   return response.data;
 }
 
-export function getGamesByPlatform(
+export function obtenerJuegosporPlataforma(
   platformId,
   page = 1
 ) {
-  return fetchGames({
+  return traerJuegos({
     platforms: platformId,
     page,
     page_size: 20,
@@ -39,40 +39,40 @@ export function getGamesByPlatform(
   });
 }
 
-export function getPlayStationGames(
+export function obtenerJuegosPlayStation(
   page = 1
 ) {
-  return getGamesByPlatform(
-    `${PLAYSTATION_PLATFORMS.PS4},${PLAYSTATION_PLATFORMS.PS5}`,
+  return obtenerJuegosporPlataforma(
+    `${PLATAFORMA_PS.PS4},${PLATAFORMA_PS.PS5}`,
     page
   );
 }
 
-export function searchGames(
+export function buscarJuegos(
   query,
   page = 1
 ) {
-  return fetchGames({
+  return traerJuegos({
     search: query,
     page,
     page_size: 20,
   });
 }
 
-export function getGamesByGenre(
+export function obtenerJuegosporGenero(
   genreId,
   page = 1
 ) {
-  return fetchGames({
+  return traerJuegos({
     genres: genreId,
     platforms:
-      `${PLAYSTATION_PLATFORMS.PS4},${PLAYSTATION_PLATFORMS.PS5}`,
+      `${PLATAFORMA_PS.PS4},${PLATAFORMA_PS.PS5}`,
     page,
     page_size: 20,
   });
 }
 
-export async function getGameDetails(id) {
+export async function obtenerDetalleJuego(id) {
   const response =
     await rawgApi.get(`/games/${id}`);
 

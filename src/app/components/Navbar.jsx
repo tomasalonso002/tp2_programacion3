@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useCart } from "../context/CartContext";
+import { useFavorite } from "../context/FavoriteContext";
 
 export default function Navbar() {
-  const { cartCount } = useCart();
+  const { FavoriteCount } = useFavorite();
 
   return (
     <nav className="bg-gray-800 text-white p-4">
@@ -30,9 +30,9 @@ export default function Navbar() {
           >
             ❤️ Favoritos
 
-            {cartCount > 0 && (
+            {FavoriteCount > 0 && (
               <span className="absolute -top-2 -right-4 bg-red-500 text-white rounded-full px-2 py-0.5 text-xs">
-                {cartCount}
+                {FavoriteCount}
               </span>
             )}
 

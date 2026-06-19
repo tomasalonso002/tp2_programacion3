@@ -1,10 +1,10 @@
-import { getGameDetails } from "@/app/services/rawgApi";
+import { obtenerDetalleJuego } from "@/app/services/rawgApi";
 import FavoriteButton from "@/app/components/FavoriteButton";
 
 export default async function GameDetail({ params }) {
   const { id } = await params;
 
-  const game = await getGameDetails(id);
+  const game = await obtenerDetalleJuego(id);
 
   console.log("GAME:", game);
 
