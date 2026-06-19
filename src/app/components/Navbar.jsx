@@ -44,6 +44,10 @@ export default function Navbar() {
 
           </Link>
 
+
+            <Link href="#" className=" bg-red-500 hover:bg-red-700 hover:text-gray-300 p-1 rounded">
+            Salir
+          </Link>
         </div>
 
       </div>

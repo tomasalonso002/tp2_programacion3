@@ -24,20 +24,24 @@ export default function Page(){
           Argentina
         </p>
       </section>
-        <section className="w-full max-w-3xl flex flex-col items-center bg-gray-800 rounded-lg p-10">
+        <section className="w-full max-w-5xl flex flex-col items-center bg-gray-800 rounded-lg p-10 mt-10">
             {cart.length === 0 ? (
                 <div className="border rounded-lg p-8 text-center">
                     No tienes juegos favoritos todavía.
                 </div>
                 ) : (
+                    <>
+                    <h1 className="text-4xl mb-5">Mis Juegos Favoritos</h1>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {cart.map((game) => (
                         <GameCard
                         key={game.id}
                         game={game}
+                        showFavoriteButton={false}
                         />
                     ))}
                 </div>
+                </>
                 )}
         </section>
     </main>

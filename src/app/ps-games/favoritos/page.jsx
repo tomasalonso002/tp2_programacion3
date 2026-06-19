@@ -28,6 +28,7 @@ export default function Favoritos() {
               key={game.id}
               game={game}
               showFavoriteButton={false}
+              
             />
           ))}
 
