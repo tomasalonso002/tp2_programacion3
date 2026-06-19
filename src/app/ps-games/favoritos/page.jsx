@@ -27,6 +27,8 @@ export default function Favoritos() {
             <GameCard
               key={game.id}
               game={game}
+              showFavoriteButton={false}
+              
             />
           ))}
 

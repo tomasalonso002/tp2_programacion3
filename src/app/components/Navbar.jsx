@@ -24,6 +24,12 @@ export default function Navbar() {
             About
           </Link>
 
+          <Link href="/profile" className="hover:text-gray-300">
+            Profile
+          </Link>
+
+          
+
           <Link
             href="/ps-games/favoritos"
             className="hover:text-gray-300 relative"
@@ -38,6 +44,10 @@ export default function Navbar() {
 
           </Link>
 
+
+            <Link href="#" className=" bg-red-500 hover:bg-red-700 hover:text-gray-300 p-1 rounded">
+            Salir
+          </Link>
         </div>
 
       </div>
