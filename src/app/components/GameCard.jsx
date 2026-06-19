@@ -4,7 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import FavoriteButton from "./FavoriteButton";
 
-export default function GameCard({ game }) {
+import RemoveFromCart from "./DeleteButton"
+
+export default function GameCard({ game, showFavoriteButton = true, showRemoveButton= true }) {
   return (
     <div className="border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow h-full flex flex-col">
 
@@ -38,9 +40,14 @@ export default function GameCard({ game }) {
           </span>
         </div>
 
-        <div className="mt-auto">
+        {showFavoriteButton && (
           <FavoriteButton game={game} />
-        </div>
+        )}
+
+        {showRemoveButton &&(
+          <RemoveFromCart game={game}/>
+        )}
+
 
       </div>
     </div>

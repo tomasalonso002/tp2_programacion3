@@ -55,7 +55,7 @@ export default function PlayStationGames() {
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
         {games.map((game) => (
-          <GameCard key={game.id} game={game} />
+          <GameCard key={game.id} game={game} showRemoveButton={false} />
         ))}
       </div>
       
