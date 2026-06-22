@@ -12,9 +12,7 @@ export default function PlayStationGames() {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  useEffect(() => {
-    loadGames();
-  }, [page, searchQuery]);
+  useEffect(() => {loadGames()}, [page, searchQuery]);
 
   const loadGames = async () => {
     setLoading(true);

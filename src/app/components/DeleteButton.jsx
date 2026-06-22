@@ -1,13 +1,13 @@
 "use client";
 
-import { useCart } from "../context/CartContext";
+import { useFavorito } from "../context/FavoritoContext";
 
-export default function RemoveFromCart({ game }) {
-  const { removeFromCart } = useCart();
+export default function removeFromFavorito({ game }) {
+  const { removeFromFavorito } = useFavorito();
 
   return (
     <button
-      onClick={() => removeFromCart(game.id)}
+      onClick={() => removeFromFavorito(game.id)}
       className="
         bg-red-600
         text-white

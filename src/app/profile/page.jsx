@@ -1,10 +1,10 @@
 "use client";
 
-import { useCart } from "@/app/context/CartContext";
+import { useFavorito } from "@/app/context/FavoritoContext";
 import GameCard from "@/app/components/GameCard";
 
 export default function Page(){
-    const { cart } = useCart()
+    const { favorito } = useFavorito()
 
     return(
       <main className="flex flex-col items-center pt-10">
@@ -25,7 +25,7 @@ export default function Page(){
         </p>
       </section>
         <section className="w-full max-w-5xl flex flex-col items-center bg-gray-800 rounded-lg p-10 mt-10">
-            {cart.length === 0 ? (
+            {favorito.length === 0 ? (
                 <div className="text-zinc-200 p-8 text-center">
                     No tienes juegos favoritos todavía.
                 </div>
@@ -33,7 +33,7 @@ export default function Page(){
                     <>
                     <h1 className="text-4xl mb-5 text-zinc-200 font-semibold">Mis Juegos Favoritos</h1>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {cart.map((game) => (
+                    {favorito.map((game) => (
                         <GameCard
                         key={game.id}
                         game={game}

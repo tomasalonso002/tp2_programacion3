@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCart } from "../context/CartContext";
+import { useFavorito } from "../context/FavoritoContext";
 
-export default function CartView({ game }) {
-  const { addToCart, cart } = useCart();
+export default function FavoritoView({ game }) {
+  const { addTofavorito, favorito } = useFavorito();
 
   const handleAdd = () => {
-    addToCart(game);
+    addTofavorito(game);
   };
 
   return (
@@ -56,7 +56,7 @@ export default function CartView({ game }) {
           </button>
 
           <Link
-            href="/cart"
+            href="/favorito"
             className="
               bg-green-600
               text-white
@@ -65,7 +65,7 @@ export default function CartView({ game }) {
               rounded
             "
           >
-            Ver favoritos ({cart.length})
+            Ver favoritos ({favorito.length})
           </Link>
 
         </div>

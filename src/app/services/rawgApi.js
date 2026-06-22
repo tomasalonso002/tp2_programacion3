@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const RAWG_API_KEY = process.env.NEXT_PUBLIC_RAWG_API_KEY;
-
 const rawgApi = axios.create({
   baseURL: "https://api.rawg.io/api",
   params: {
@@ -19,8 +18,6 @@ export const PLAYSTATION_PLATFORMS = {
   PS_VITA: 21,
 };
 
-//Trae un juego
-
 async function fetchGames(params) {
   const response = await rawgApi.get("/games", {
     params,
@@ -28,7 +25,6 @@ async function fetchGames(params) {
   return response.data;
 }
 
-//Obtener juego por plataforma
 export function getGamesByPlatform(
   platformId,
   page = 1
@@ -40,7 +36,6 @@ export function getGamesByPlatform(
     ordering: "-rating",
   });
 }
-//Obtener juego por PlayStation
 export function getPlayStationGames(
   page = 1
 ) {
@@ -50,7 +45,6 @@ export function getPlayStationGames(
   );
 }
 
-//Buscar juego
 export function searchGames(
   query,
   page = 1
@@ -62,7 +56,6 @@ export function searchGames(
   });
 }
 
-//Buscar juegos por genero
 export function getGamesByGenre(
   genreId,
   page = 1
@@ -76,7 +69,6 @@ export function getGamesByGenre(
   });
 }
 
-//Obtener detalles de un juego
 export async function getGameDetails(id) {
   const response =
     await rawgApi.get(`/games/${id}`);

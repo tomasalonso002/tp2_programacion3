@@ -1,13 +1,13 @@
 "use client";
 
-import { useCart } from "../context/CartContext";
+import { useFavorito } from "../context/FavoritoContext";
 
 export default function FavoriteButton({ game }) {
-  const { addToCart } = useCart();
+  const { addTofavorito } = useFavorito();
 
   return (
     <button
-      onClick={() => addToCart(game)}
+      onClick={() => addTofavorito(game)}
       className="
         bg-blue-600
         text-white

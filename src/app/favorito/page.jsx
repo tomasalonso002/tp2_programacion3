@@ -2,23 +2,23 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCart } from "../context/CartContext";
+import { useFavorito } from "../context/FavoritoContext";
 
-export default function CartPage() {
+export default function FavoritoPage() {
   const {
-    cart,
-    removeFromCart,
+    favorito,
+    removeFromFavorito,
     updateQuantity,
-  } = useCart();
+  } = useFavorito();
 
   return (
     <div className="max-w-6xl mx-auto p-6">
 
       <h1 className="text-3xl font-bold mb-6">
-        Mi carrito
+        Mis Favoritos
       </h1>
 
-      {cart.length === 0 ? (
+      {favorito.length === 0 ? (
         <div>
 
           <p className="mb-4">
@@ -43,7 +43,7 @@ export default function CartPage() {
 
         <div className="space-y-4">
 
-          {cart.map((game) => (
+          {favorito.map((game) => (
 
             <div
               key={game.id}
@@ -89,7 +89,7 @@ export default function CartPage() {
 
                <button
                 onClick={() =>
-                  removeFromCart(game.id)
+                  removeFromFavorito(game.id)
                 }
                 className="
                   bg-red-600
