@@ -48,10 +48,11 @@ src/app
 ├── favorito
 ├── components
 ├── context
+├── profile   
 ├── ps-games
+    ├── favoritos
 │   └── [id]
 ├── services
-├── test-api
 ├── layout.jsx
 └── page.jsx
 ```
@@ -88,13 +89,15 @@ http://localhost:3000
 
 ## Rutas principales
 
-| Ruta             | Descripción              |
-| ---------------- | ------------------------ |
-| `/`              | Página principal         |
-| `/ps-games`      | Catálogo de juegos       |
-| `/ps-games/[id]` | Detalle del juego        |
-| `/favorito`          | Lista de favoritos       |
-| `/about`         | Información del proyecto |
+| Ruta                  | Descripción              |
+| ----------------      | ------------------------ |
+| `/`                   | Página principal         |
+| `/ps-games`           | Catálogo de juegos       |
+| `/ps-games/[id]`      | Detalle del juego        |
+| `/ps-games/favoritos` | Lista de favoritos       |
+| `/about`              | Información del proyecto |
+| `/profile`            | Perefil de usuario       |
+|
 
 ---
 
