@@ -26,12 +26,12 @@ export default function Page(){
       </section>
         <section className="w-full max-w-5xl flex flex-col items-center bg-gray-800 rounded-lg p-10 mt-10">
             {cart.length === 0 ? (
-                <div className="border rounded-lg p-8 text-center">
+                <div className="text-zinc-200 p-8 text-center">
                     No tienes juegos favoritos todavía.
                 </div>
                 ) : (
                     <>
-                    <h1 className="text-4xl mb-5">Mis Juegos Favoritos</h1>
+                    <h1 className="text-4xl mb-5 text-zinc-200 font-semibold">Mis Juegos Favoritos</h1>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {cart.map((game) => (
                         <GameCard
