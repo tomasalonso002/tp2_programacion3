@@ -15,7 +15,7 @@ export default function TestAPI() {
   const testConnection = async () => {
     try {
       setLoading(true);
-      const data = await getPlayStationGames(1, 5);
+      const data = await getPlayStationGames(1);
       setGames(data.results || []);
       console.log("Conexión exitosa:", data);
     } catch (err) {
