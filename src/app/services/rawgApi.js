@@ -36,6 +36,7 @@ export function getGamesByPlatform(
     ordering: "-rating",
   });
 }
+
 export function getPlayStationGames(
   page = 1
 ) {
@@ -51,19 +52,6 @@ export function searchGames(
 ) {
   return fetchGames({
     search: query,
-    page,
-    page_size: 20,
-  });
-}
-
-export function getGamesByGenre(
-  genreId,
-  page = 1
-) {
-  return fetchGames({
-    genres: genreId,
-    platforms:
-      `${PLAYSTATION_PLATFORMS.PS4},${PLAYSTATION_PLATFORMS.PS5}`,
     page,
     page_size: 20,
   });

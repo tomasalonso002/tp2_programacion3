@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import FavoriteButton from "./FavoriteButton";
 
-import removeFromFavorito from "./DeleteButton"
+import RemoveFromFavorito from "./DeleteButton";
 
 export default function GameCard({ game, showFavoriteButton = true, showRemoveButton= true }) {
   return (
@@ -45,7 +45,7 @@ export default function GameCard({ game, showFavoriteButton = true, showRemoveBu
         )}
 
         {showRemoveButton &&(
-          <removeFromFavorito game={game}/>
+          <RemoveFromFavorito game={game}/>
         )}
 
 
