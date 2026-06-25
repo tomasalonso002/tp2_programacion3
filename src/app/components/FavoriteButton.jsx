@@ -15,6 +15,7 @@ export default function FavoriteButton({ game }) {
         py-2
         rounded
         hover:bg-blue-700
+        cursor-pointer
       "
     >
       ⭐ Favorito

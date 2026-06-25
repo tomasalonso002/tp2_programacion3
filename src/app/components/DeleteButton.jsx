@@ -15,6 +15,7 @@ export default function RemoveFromFavorito({ game }) {
         py-2
         rounded
         hover:bg-red-700
+        cursor-pointer
       "
     >
       Eliminar

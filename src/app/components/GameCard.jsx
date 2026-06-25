@@ -24,7 +24,7 @@ export default function GameCard({ game, showFavoriteButton = true, showRemoveBu
       <div className="p-4 flex flex-col flex-1">
 
         <Link href={`/ps-games/${game.id}`}>
-          <h3 className="font-bold text-lg mb-2 hover:text-blue-700 transition-colors min-h-[56px]">
+          <h3 className="font-bold text-lg mb-2 hover:text-blue-700 transition-colors min-h-22">
             {game.name}
           </h3>
         </Link>
@@ -35,7 +35,7 @@ export default function GameCard({ game, showFavoriteButton = true, showRemoveBu
             <span>{game.rating?.toFixed(1) || "N/A"}</span>
           </div>
 
-          <span className="text-sm text-gray-600 text-zinc-900">
+          <span className="text-sm  text-zinc-900">
             {game.released?.split("-")[0] || "Próximamente"}
           </span>
         </div>
