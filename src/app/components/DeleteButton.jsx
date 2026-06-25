@@ -2,7 +2,7 @@
 
 import { useFavorito } from "../context/FavoritoContext";
 
-export default function removeFromFavorito({ game }) {
+export default function RemoveFromFavorito({ game }) {
   const { removeFromFavorito } = useFavorito();
 
   return (
